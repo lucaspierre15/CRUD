@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Turret+Road:wght@200;300;400;500;700;800&display=swap&family=Montserrat:wght@100..900&display=swap&family=Comfortaa:wght@300..700&display=swap&family=Orbitron:wght@400..900&display=swap');
+
+*{
+    margin:0;
+    padding: 0;
+    text-decoration: none;
+}
+
+:root{
+    --pag_Bg_Color:#363636;
+    
+    --cinza_principal: #2b2a2a;
+    --cinza_escuro: #202020;
+    --cinza_dark: #181818;
+
+    --cinza_azul_modal: #1b191f;
+    --background_cinza_escuro_modal: #15151a;
+
+    --font_branco_principal: #f0f0f0;
+    --dark: #111111;
+
+    --font_texto: "Montserrat", sans-serif;
+    --font_titulos_grandes: "Orbitron", sans-serif;
+    --font_titulos_normais: "Comfortaa", sans-serif;
+
+    --width_Page: 97vw;
+}

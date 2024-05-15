@@ -1,0 +1,81 @@
+body{
+    overflow: hidden;
+    margin: 0;
+    background-color: #42484b;
+
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 90%;
+    background-color: #202129;
+    margin: 0 auto;
+    position:relative;
+}
+
+.titulo{
+    display: grid;
+    grid-template-rows: repeat(3, auto); 
+    gap: 10px; 
+    justify-items: center; 
+}
+
+.titulo>h1:nth-child(2){
+    padding-right: 250px;
+}
+
+.gamer{
+    font-size: 120px;
+    font-family: "Press Start 2P", system-ui;
+    text-shadow: 0 0 20px #2AA94B, 0 0 24px #126125;
+    color: #5FDB7E;
+    margin: 0;
+    padding-right: 500px;
+}
+
+.gymBro{
+    color:rgb(238, 247, 255);
+    font-size: 270px;
+    font-family: var(--font_titulos_grandes);
+    font-weight: 800;
+    font-style: normal;
+    line-height: 0.75;
+    margin: 0;
+}
+
+.suco{
+    position:absolute;
+    top: 70px;
+    right: 90px;
+}
+
+.suco a{
+    color: #FFC702;
+    font-size: 23px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    letter-spacing: 4px;
+    padding: 0px 7px;
+}
+
+.botaoLocal{
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+}
+
+.botaoLocal a{
+    border: 5px solid #269D38;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 33px;
+    color: white;
+    border-radius: 13px;
+    padding: 15px 50px;
+
+}
+
+

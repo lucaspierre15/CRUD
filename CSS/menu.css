@@ -1,0 +1,932 @@
+/*-------------------NAVBAR-------------------*/
+
+header{
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+    grid-template-rows: 100%;
+    grid-template-areas: "logo lista1 lista2";
+    align-items: center;
+    height: 9vh;
+    block-size: border-box;
+    width: var(--width_Page);
+    background-color: var(--cinza_escuro);
+}
+
+.container_logo{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    background-color: #94ff79;
+    justify-self: center;
+    grid-area: logo;
+    justify-content: center;
+    align-items: center;
+}
+
+#logo {
+    background-color: #141414;
+    height: 100%;
+    width: 35%;
+    border-radius: 50%;
+}
+
+
+.container_elementos_lista1{
+    gap: 0 10%;
+    width: 85%;
+    grid-area: lista1;
+}
+
+.lista{
+    display:flex ;
+    list-style: none;
+    width: 25%;
+    justify-content: space-around;
+}
+
+.lista a{
+    color: var(--font_branco_principal);
+    font-family: var(--font_texto);
+    font-weight: 500;
+    font-size: 1em;
+    font-style: normal;
+    list-style-type: none;
+    justify-self: center;
+}
+
+.lista2{
+    display: flex;
+    justify-content: space-around;
+    grid-area: lista2;
+}
+
+.open_settings, .pesquisar{
+    border: none;
+    background-color: transparent;
+    background-size: cover;
+    height: 5vh;
+    width: 5vh;
+    cursor:pointer;
+}
+
+.open_settings{
+    background-color: #fff;
+    border-radius: 50%;
+    background-image: url(../IMAGES/Account_Circle.svg);
+}
+
+
+/*.open_menu{
+    color: #fff;
+    border-bottom: 2px solid;
+    
+}
+
+.open_menu::after, .open_menu::before{
+    content: '';
+    display: block;
+    width: 5vh;
+    height: 2px;
+    background-color: currentColor;
+    margin-top: 19%;
+}*/
+
+
+
+
+.pesquisar{
+    background-image: url(../IMAGES/Search.svg);
+}
+
+
+
+
+
+
+
+
+/*-------------------MODAL-------------------*/
+
+
+
+
+
+
+
+
+
+.container_modal{
+    /*display: none;*/
+    position: fixed;
+    z-index: 1;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    overflow-y: hidden;
+}
+
+body.modal-open{
+    overflow-y: hidden;
+}
+
+.modal{
+    background-color: var(--cinza_azul_modal);
+    width: 35%;
+    height: 100vh;
+    float: right; 
+    padding-left: 1vh;
+    overflow-y: hidden;
+     /*animation: slideInRight 1.1s forwards;
+    transform: translateX(100%); */
+}
+
+.conteudo_modal{
+
+    display: grid;
+    grid-template-columns: 87% 13%;
+    grid-template-rows: 8vh .5vh 91.5vh/*8vh 38vh 8vh 37.5vh*/;
+    grid-template-areas:"navbar_itens XIS"
+                        "bar_top_title bar_top_title"
+                        "sec tab";    
+    overflow-y: hidden;
+}
+
+.barrinha_top_title{
+    background-color: #fff;
+    height: 100%;
+    width: 100%;
+    border-radius: 4px;
+
+    grid-area: bar_top_title;
+}
+
+.pesquisar_no_modal{
+
+    background-color: #62a812;
+    height: 6.5vh;
+    width: 6.5vh;
+    margin-right: 10%;
+    border: none;
+
+    grid-area: navbar_itens;
+    justify-self: end;
+    align-self: center;
+}
+
+.close {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--background_cinza_escuro_modal);
+    height: 6vh;
+    width: 6vh;
+    border-radius: 50%;
+    grid-area: XIS;
+    justify-self: center;
+    align-self: center;
+
+    background-color: transparent;
+    border: none;
+    border-radius: 10px;
+    
+    position: relative;
+    cursor: pointer;
+}
+
+.close:hover{
+    background-color: #2c2c2c;
+}
+
+.xis {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    width: 80%;
+    height: 80%;
+}
+
+.xis::before, .xis::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: #e6e6e6;
+    border-radius: 2px;
+}
+
+.xis::before {
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.xis::after {
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+}
+
+.container_title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--background_cinza_escuro_modal);
+    height: 100%;
+    width: 100%;
+
+
+    grid-area: title;
+    justify-self: end;
+}
+
+.container_title h1{
+    color:#fff;
+    font-family: sans-serif;
+    font-size: 2.6em;
+}
+
+.entorno_image_util{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 30vh;
+    width: 30vh;
+    block-size: 30vh;
+    inline-size: 30vh;
+
+    border: 1vh solid #fff;
+    border-radius: 50%;
+    background-color: transparent;
+
+    grid-area: image_util;
+    justify-self: center;
+    align-self: center;
+}
+
+.preenchimento_image_util{
+    height: 97%;
+    width: 97%;
+    background-color: #292929;
+    border-radius: 50%;
+}
+
+.container_info_nome{
+    display: flex;
+    justify-content: center;
+    
+    height: 100%;
+    min-width: 50%;
+    max-width: 90%;
+    border-radius: 20px;
+
+    font-family: sans-serif;
+    background-color: var(--background_cinza_escuro_modal);
+    grid-area: text_util;
+
+    justify-self: center;
+    align-items: center;
+}
+
+.titulo_nome_util{
+    font-size: 3.2em;
+    color: #fff;
+}
+
+.container_tabs_lateral{
+    display: flex;
+    flex-direction: column;
+    background-color: #101016;
+    height: 100%;
+    width: 100%;
+    border-left: 3px solid #535353;
+
+    grid-area: tab;
+}
+
+.elements_tab_lateral{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(9, 9vh);
+    height: 81vh;
+    width: 100%;
+}
+
+.elements_tab_lateral >div{
+    height: 80%;
+    width: 80%;
+
+    justify-self: center;
+    align-self: center;
+    /* position: relative; */
+}
+
+/* .container_tabs_lateral>div::after{
+    content:'';
+    height: 2px;
+    width: 125%;
+    background-color: #535353;
+    position: absolute;
+    
+    bottom: -25%;
+} */
+
+/* .container_tabs_lateral>div:last-child::after{
+    
+    background-color: transparent;
+} */
+
+.config{
+    background-color: #ad74e2;
+}
+
+.util{
+    background-color: brown;
+}
+
+.container_exit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 10.5vh;
+    width: 100%;
+    grid-area: exit;
+}
+
+.exit{
+    background-color: #b40ab4;
+    width: 80%;
+    height: 70%;
+}
+
+
+/* ELEMENTOS DENTRO DAS SECÇÔES */
+
+
+/* UTILIZADOR */
+
+.sec_utilizador{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 8vh 38vh 8vh 37.5vh;
+    grid-template-areas:"title"
+                        "image_util"
+                        "text_util"
+                        ".";
+
+    grid-area: sec;
+}
+
+.sec_config{
+    display: none;
+    grid-template-columns: 100%;
+    grid-template-rows: 8vh 85.5vh; /*83.5*/
+    grid-template-areas:"title"
+                        ".";
+
+    grid-area: sec;
+}
+
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+
+
+
+
+/*-------------------MAIN-------------------*/
+
+
+
+
+
+
+
+body{
+    display: flex;
+    background-color: #666666;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+    width: var(--width_Page);
+    background-color: var(--pag_Bg_Color);
+}
+
+
+
+
+.Grid_Page{
+    display: grid;
+    grid-template-columns:  repeat(5, 1fr);
+    grid-template-rows: 30vh 100px 75px repeat(5, 13vh);
+    grid-template-areas:"BemVindo BemVindo BemVindo BemVindo BemVindo BemVindo"            
+                        ". t t t . ."
+                        "titu . . . . . "
+                        "Card1 Text1 Text1 titu2 titu2 ."
+                        "Card1 Text1 Text1 Card2 Card2 Card2"
+                        "Card1 . . Card2 Card2 Card2"
+                        ". Text2 Text2 Card2 Card2 Card2"
+                        ". Text2 Text2 Card2 Card2 Card2";
+}
+
+
+.BemVindo_Titulo{
+    justify-self: center;
+    align-self: end;
+    grid-area: BemVindo;
+    font-family: "Comfortaa", sans-serif;
+    font-weight: 700;
+    font-size: 50px;
+    font-style: normal;
+    text-align: center;
+    
+}
+
+.Gamer_Titulo{
+    color: #380a6d;
+    text-shadow: 0 0 10px #6b1ac7;
+    font-family: "Orbitron", sans-serif;
+    font-weight: 700;
+}
+
+.Gym_Titulo{
+    color: var(--font_branco_principal);
+    font-family: "Orbitron", sans-serif;
+    font-weight: 700;
+}
+
+.traco1, .traco2{
+    height: 5px;
+    width: 80%;
+    justify-self: center;
+    background-color: #7a7a7a;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    grid-area: t;
+}
+
+.traco2{
+    display: none;
+}
+
+.titulo_cards, .titulo_cards2{
+    justify-self: center;
+    align-self: end;
+    color: var(--font_branco_principal);
+    font-family: var(--font_titulos_normais);
+    font-size: 50px;
+    grid-area: titu;
+}
+
+.titulo_cards2{
+    font-size: 70px;
+    margin-right: 100px;
+    grid-area: titu2;
+}
+
+.card1, .card2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    background-color: var(--cinza_dark);
+}
+
+.preenchimento_cards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #202020;
+    height: 100%;
+    width: 95%;
+    border-radius: 15px;
+}
+
+.card1{
+    grid-area: Card1;
+    justify-self: end;
+    height: 70%;
+    width: 80%;
+    box-shadow: -4px 4px 10px 0px #5812a8;
+}
+
+.card2{
+    grid-area: Card2;
+    height: 87%;
+    width: 85%;
+    box-shadow: 4px 4px 10px 0px #5812a8;
+}
+
+.image_card{
+    height: 95%;
+    width: 95%;
+    border-radius: 20px;
+    background-size: cover;
+}
+
+.Text, .Text2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--cinza_escuro);
+    color: var(--font_branco_principal);
+    font-family: var(--font_texto);
+    border-radius: 10px;
+    height: fit-content;
+    width: 100%;
+}
+
+.preenchimento_Text_Cards{
+    height: 95%;
+    width: 95%;
+    background-color: var(--cinza_principal);
+    border-radius: 10px;
+}
+
+.Text p, .Text2 p{
+    padding: 2%;
+}
+
+.Text {
+    justify-self: start;
+    direction: ltr;
+    width: 80%;
+    margin-left: 5%;
+    grid-area: Text1;
+    
+}
+
+.Text2 {
+    justify-self: end;
+    align-self: start;
+    direction: rtl;
+    margin-right: 5%;
+    grid-area: Text2;
+}
+
+.preenchimento_titulo_tabelas{
+    background-color: var(--pag_Bg_Color);
+    grid-area: g;
+}
+
+.Tabelas_Titulo {
+    font-family: "Orbitron", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 100px;
+    text-shadow:  0 0 5px #5812a8, 0 0 10px #6b1ac7, 0 0 15px #872dee;
+}
+
+.box_Titulo_Tabelas {
+    height: fit-content;
+    width: 100%;
+    margin-bottom: 20%;
+    text-align: center;
+    justify-self: center;
+    align-self: center;
+    border-radius: 20px;
+    background-color: var(--cinza_escuro);
+    text-align: center;
+    grid-area: tabl;
+}
+
+.To_tabelas {
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+    grid-template-rows: 20vh 15vh 20vh auto 20vh;
+    grid-template-areas: 
+        "g g g"
+        ". tabl ."
+        "cars cars cars"
+        "cars cars cars"
+        "p p p"; 
+    background-color: var(--cinza_principal);
+    width: 100%;
+
+}
+
+.carrossel_Tabelas {
+    display: flex;
+    height: 70vh;
+    width: 80%;
+    justify-self: center;
+    background-image: radial-gradient(#5812a8, #380a6d, #27005a, #14012e);
+    border-radius: 20px;
+    justify-content: space-evenly;
+    align-items: start;
+    box-shadow: 0px 0px 5px 2px #0c001d;
+    grid-area: cars;
+}
+
+.Card_Image {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    position: relative;
+    margin-top: 1%;
+    height: 95%;
+    width: 25%;
+    border-radius: 20px;
+    background-color: var(--cinza_dark);
+}
+
+.Image {
+    margin-top: 6%;
+    height: 65%;
+    width: 90%;
+    border-radius: 20px;
+    background-size: cover;
+}
+
+.Card_Button {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 37%;
+    width: 100%;
+    background-color: var(--cinza_principal);
+    border-bottom: 5px solid var(--dark);
+    box-shadow: 2px 2px 10px var(--dark);
+    border-radius: 20px;
+}
+
+.btn_tabs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40%;
+    width: 70%;
+    background-color: var(--cinza_escuro);
+    margin-bottom: 13%;
+    border: none;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.btn_tabs:hover, .btn_tabs p:hover{
+    transform: scale(1.05);
+    border-bottom: solid var(--cinza_dark);
+}
+
+.btn_tabs p{
+    color: var(--font_branco_principal);
+    font-family: "Comfortaa", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    font-style: normal;
+    border: hidden;
+}
+
+.preenchimento_to_tabelas{
+    background-color: var(--cinza_escuro);
+    align-self: end;
+    height: 50vh;
+    width: 100%;
+    grid-area: p;
+}
+
+
+
+
+/*-------------------RESOLUÇÕES-------------------*/
+
+
+
+
+
+
+
+
+@media screen and (max-width: 767px) {
+    /* Estilos para telas menores que 768 pixels */
+    
+    /*--NAVBAR--*/
+
+    header{
+        background-color: #94ff79;
+    }
+
+    .lista a{
+        font-size: 1.7em;
+    }
+
+    .container_logo{
+        background-color: #27005a;
+    }
+
+    .pesquisar{
+        display: none;
+    }
+
+        /*--MODAL--*/
+
+    .modal{
+        width: 67%;
+    }
+
+
+    /*--MAIN--*/
+
+    .BemVindo_Titulo{
+        text-align: center;
+    }
+}
+
+
+@media screen and (max-width: 550px){
+    /* Estilos para telas menores que 500 pixels */
+
+
+     /*--NAVBAR--*/
+
+    header{
+        background-color: deepskyblue;
+        grid-template-columns: 25% 50% 25%;
+    }
+
+    .lista li{
+        display: none;
+        
+    }
+
+    /*--MODAL--*/
+
+    .modal{
+        width: 100%;
+    }
+
+    .conteudo_modal{
+        grid-template-rows: 10vh 29vh 8vh 56vh ;
+        grid-template-columns: 85% 15%;
+
+    }
+
+    .close{
+        height: 9.5vh;
+        width: 9.5vh;
+    }
+
+
+    /*--MAIN--*/
+    .Bem_v_Titulo{
+        display: none;
+    }
+
+    .Gamer_Titulo{
+        display: block;
+        font-size: 1.4em;
+    }
+
+    .Gym_Titulo{
+        display: inline;
+        font-size: 1.2em;
+        margin-left: 35vw;
+    }
+
+    .traco1{
+        width: 100%;
+    }
+}   
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    /* Estilos para telas entre 768 e 1024 pixels */
+
+     /*--NAVBAR--*/
+
+     header{
+        background-color: #6b1ac7;
+        grid-template-columns: 20% 60% 20%;
+     }
+
+
+    /*--MODAL--*/
+
+    .modal{
+        width: 50%;
+    }
+
+    .conteudo_modal{
+        grid-template-columns: 88% 12%;
+    }
+
+
+
+    /*--MAIN--*/
+
+    .BemVindo_Titulo h1{
+        height: 20vh;
+        width: var(--width_Page);
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 60% 40%;
+        grid-template-areas:"BemV Gamer" 
+                            "traco Gym";
+    }
+
+    .BemVindo_Titulo h1 > *:not(:last-child){
+        align-self: center;
+    }
+
+    .Bem_v_Titulo, .Gym_Titulo{
+        font-size: .7em;
+    }
+
+    .Gamer_Titulo{
+        font-size: 1em;
+        justify-self: start;
+        grid-area: Gamer;
+    }
+
+    .Gym_Titulo{
+        justify-self: center;
+        margin-right: 3%;
+        grid-area: Gym;
+    }
+
+    .traco1{
+       display: none;
+    } 
+
+    .traco2{
+        align-self: start;
+        display: block;
+        grid-area: traco;
+    }
+
+}
+
+@media screen and (min-width: 1680px) {
+    /* Estilos para telas maiores que 1680 pixels */
+
+
+    /*--NAVBAR--*/
+    
+    header{
+        background-color: brown;
+        height: 6vh;
+    }
+
+
+    .lista{
+        width: 100%;
+    }
+
+    .lista a{
+        font-size: 1.2em;
+    }
+
+
+    /*--MODAL--*/
+
+
+    .modal{
+        width: 30%;
+    }
+
+    .conteudo_modal{
+        grid-template-rows: 5vh 25vh 6vh 64vh ;
+        grid-template-columns: 90% 10%;
+
+    }
+
+    .close{
+        height: 4.5vh;
+        width: 4.5vh;
+    }
+
+    .container_tabs_lateral{
+        grid-template-rows: repeat(auto-fill, 5vh);
+        background-color: #8747ff;
+    }
+
+
+    /*--MAIN--*/
+
+
+} 
+
+/*1366 x 768*/
+/*1920 x 1080*/
